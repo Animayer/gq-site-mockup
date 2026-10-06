@@ -1,0 +1,56 @@
+import fs from "node:fs";
+import http from "node:http";
+import path from "node:path";
+import { ROOT, publishedRelPaths } from "./files.mjs";
+
+const host = "127.0.0.1";
+const port = Number(process.env.PORT || 4173);
+const published = new Set(publishedRelPaths());
+const notFound = path.join(ROOT, "404.html");
+
+function contentType(file) {
+  if (file.endsWith(".html")) return "text/html; charset=utf-8";
+  if (file.endsWith(".css")) return "text/css; charset=utf-8";
+  if (file.endsWith(".js")) return "text/javascript; charset=utf-8";
+  if (file.endsWith(".svg")) return "image/svg+xml";
+  return "text/plain; charset=utf-8";
+}
+
+function sendFile(res, status, file) {
+  const body = fs.readFileSync(file);
+  res.writeHead(status, {
+    "content-type": contentType(file),
+    "content-length": body.length,
+  });
+  res.end(body);
+}
+
+const server = http.createServer((req, res) => {
+  let pathname = "/";
+  try {
+    pathname = new URL(req.url || "/", `http://${host}:${port}`).pathname;
+  } catch {
+    sendFile(res, 404, notFound);
+    return;
+  }
+  if (pathname === "/") pathname = "/index.html";
+  let rel = pathname;
+  try {
+    rel = decodeURIComponent(pathname);
+  } catch {
+    sendFile(res, 404, notFound);
+    return;
+  }
+  const cleaned = path.posix.normalize(rel).replace(/^\/+/, "");
+  const abs = path.resolve(ROOT, cleaned);
+  const inside = abs === ROOT || abs.startsWith(ROOT + path.sep);
+  if (!inside || cleaned.includes("..") || !published.has(cleaned) || !fs.existsSync(abs) || !fs.statSync(abs).isFile()) {
+    sendFile(res, 404, notFound);
+    return;
+  }
+  sendFile(res, 200, abs);
+});
+
+server.listen(port, host, () => {
+  console.log(`ready http://${host}:${port}`);
+});
