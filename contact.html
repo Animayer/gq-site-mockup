@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Griffin &amp; Quill. The form is a mockup and does not send.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1F2A44">
+  <title>Contact | Griffin &amp; Quill</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <p class="mockup-bar">Design mockup for owner review. Forms are not connected.</p>
+    <div class="header-bar">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="logo-slot">Logo coming soon</span>
+          <span class="wordmark">
+            <span class="wordmark-name">Griffin &amp; Quill</span>
+            <span class="wordmark-meta">South Carolina</span>
+          </span>
+        </a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+          <span class="nav-toggle-label">Menu</span>
+        </button>
+        <nav id="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="worlds.html">Worlds</a></li>
+            <li><a href="schools.html">Schools</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <noscript>
+      <p class="container note">JavaScript is off, so the menu button and the thank-you note will not run. Page links still work. Forms are not connected to a server.</p>
+    </noscript>
+
+    <div class="container page-hero">
+      <p class="eyebrow">Contact</p>
+      <h1>Write to the studio.</h1>
+      <p class="lede">The placeholder email is <a href="mailto:hello@griffinandquill.com">hello@griffinandquill.com</a>. The form below does not send mail. It shows a thank-you note so you can see the layout.</p>
+    </div>
+
+    <section class="section" id="contact-form" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="form-card form-wrap">
+          <h2 id="contact-title">Message</h2>
+          <form data-mockup action="#">
+            <p class="thanks" data-thanks tabindex="-1" hidden>Thanks! (mockup: form not connected)</p>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="contact-name">Your name (required)</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="contact-email">Email (required)</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="contact-who">I am a (required)</label>
+                <select id="contact-who" name="who" required>
+                  <option value="">Select one</option>
+                  <option>Parent or guardian</option>
+                  <option>Homeschooler</option>
+                  <option>Teacher or educator</option>
+                  <option>Student</option>
+                  <option>School or district</option>
+                  <option>Lifelong learner</option>
+                  <option>Someone else</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="contact-topic">Topic (required)</label>
+                <select id="contact-topic" name="topic" required>
+                  <option value="">Select one</option>
+                  <option>Tutoring</option>
+                  <option>Classroom resources</option>
+                  <option>Worlds and games</option>
+                  <option>Schools and districts</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="contact-message">Message (required)</label>
+              <textarea id="contact-message" name="message" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="note">Do not include a child's full name or other private details. This form is a visual mockup and does not send. We do not promise a reply time, because this page is not live.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-brand" href="index.html">
+          <span class="logo-slot">Logo coming soon</span>
+          <span class="wordmark-name">Griffin &amp; Quill</span>
+        </a>
+        <p>A South Carolina studio for history tutoring, classroom resources, and games on the way.</p>
+        <p><a href="mailto:hello@griffinandquill.com">hello@griffinandquill.com</a></p>
+        <p>Placeholder email.</p>
+      </div>
+      <div>
+        <p class="footer-label" id="foot-learn">Learn</p>
+        <ul class="footer-links" aria-labelledby="foot-learn">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="tutoring.html">Tutoring</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="worlds.html">Worlds</a></li>
+              <li><a href="schools.html">Schools</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-label" id="foot-visit">Visit</p>
+        <ul class="footer-links" aria-labelledby="foot-visit">
+              <li><a href="about.html">About</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-label" id="foot-legal">Legal</p>
+        <ul class="footer-links" aria-labelledby="foot-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="#top">Back to top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="fineprint">© 2026 Griffin &amp; Quill LLC. Design mockup. Example prices, quotes, and product cards are not real offers or reviews.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
