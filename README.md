@@ -1,6 +1,6 @@
 # Griffin & Quill
 
-Design mockup for Griffin & Quill LLC, a new South Carolina edtech studio. This is a review site for the owner. It is not a launch, and it is not deployed to griffinandquill.com.
+Design mockup for Griffin & Quill LLC, a new South Carolina edtech studio. This is a review site for the owner. It is not a launch. The mockup is published at https://www.griffinandquill.com and stays noindex until you say to launch.
 
 Plain static HTML, CSS, and a small JavaScript file. No build step, no framework, no analytics, no cookies, and no third-party scripts except Google Fonts. It can be published as-is on GitHub Pages or Cloudflare Pages by serving this folder.
 
@@ -15,6 +15,33 @@ python3 -m http.server 8742
 Open [http://127.0.0.1:8742](http://127.0.0.1:8742).
 
 `404.html` is the page GitHub Pages and Cloudflare Pages show for unknown URLs. Python's `http.server` does not do that, so open [http://127.0.0.1:8742/404.html](http://127.0.0.1:8742/404.html) to review it.
+
+## Check the mockup
+
+QA runs one command. It opens the pages in Chromium, uses the menu, submits the forms, and checks the mockup banner, `noindex`, and `robots.txt`.
+
+Install once from this folder:
+
+```bash
+npm ci
+npx playwright install chromium
+```
+
+Check a local copy:
+
+```bash
+npm run verify
+```
+
+Check the published site:
+
+```bash
+BASE_URL=https://www.griffinandquill.com npm run verify
+```
+
+A passing run prints green tests and writes `verify-results/report/index.html`. Open that report with `npm run verify:report`. If the home page or `robots.txt` looks wrong before you spend a browser run, use `npm run verify:doctor`.
+
+The local checker is not `python3 -m http.server`. Python does not serve `404.html` for a bad path. `npm run verify` starts its own server on port 4173 and stops it when the run finishes. Leave `BASE_URL` unset for that local server. Set `BASE_URL` only when you mean the live origin.
 
 Merriweather and Lato load from Google Fonts when you are online. Offline, the pages fall back to Georgia and Arial.
 

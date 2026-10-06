@@ -1,0 +1,14 @@
+{
+  "name": "griffin-quill-verify",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "playwright test",
+    "verify:doctor": "node verify/doctor.mjs",
+    "verify:report": "playwright show-report verify-results/report"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.55.1"
+  }
+}
