@@ -19,8 +19,10 @@ async function waitForHome() {
     try {
       const res = await fetch(`${base}/`);
       if (res.status === 200) return;
-    } catch {
-      // The server is still binding the port.
+    } catch (error) {
+      const cause = error instanceof Error ? error.cause : undefined;
+      const code = cause && typeof cause === "object" && "code" in cause ? cause.code : undefined;
+      if (code !== "ECONNREFUSED") throw error;
     }
     await new Promise((resolve) => setTimeout(resolve, 100));
   }

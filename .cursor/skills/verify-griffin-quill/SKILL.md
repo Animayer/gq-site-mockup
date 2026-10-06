@@ -55,7 +55,7 @@ npm run verify -- --grep "faq questions"
 npm run verify -- --grep "form stays"
 ```
 
-The visitor checks cover every page at 1280 and 390, the menu at 390, 1000, 1001, and 1280, each mockup form, the FAQ, one placeholder link, axe serious and critical impacts, `robots.txt`, and `/not-a-page`.
+The visitor checks cover every page at 1280 and 390, the menu at 390, 1000, 1001, and 1280, each mockup form, the FAQ, one placeholder link, axe serious and critical impacts, `robots.txt`, and `/not-a-page`. The open menu covers the page heading. An outside click in the check uses the mockup bar.
 
 ## Evidence
 

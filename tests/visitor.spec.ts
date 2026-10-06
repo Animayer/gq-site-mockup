@@ -123,7 +123,7 @@ test("escape, an outside click, and a wide window close the menu", async ({ page
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
   await expect(toggle).toBeFocused();
   await toggle.click();
-  await page.locator("h1").click();
+  await page.locator(".mockup-bar").click();
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
   await toggle.click();
   await page.setViewportSize({ width: 1100, height: 800 });
