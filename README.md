@@ -1,6 +1,6 @@
 # Griffin & Quill
 
-Design mockup for Griffin & Quill LLC, a new South Carolina edtech studio. This is a review site for the owner. It is not a launch, and it is not deployed to griffinandquill.com.
+Design mockup for Griffin & Quill LLC, a new South Carolina edtech studio. This is a review site for the owner. It is not a launch. The mockup is published at https://www.griffinandquill.com and stays noindex until you say to launch.
 
 Plain static HTML, CSS, and a small JavaScript file. No build step, no framework, no analytics, no cookies, and no third-party scripts except Google Fonts. It can be published as-is on GitHub Pages or Cloudflare Pages by serving this folder.
 
